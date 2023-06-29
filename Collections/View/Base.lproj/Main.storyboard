@@ -62,13 +62,169 @@
                     <view key="view" contentMode="scaleToFill" id="PpU-VX-48a">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3B3-Vl-zdR">
+                                <rect key="frame" x="186" y="99" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UJP-bB-8km">
+                                <rect key="frame" x="0.0" y="59" width="393" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="WEM-E9-cg9"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="gray" title="Create Int arrey whith 10_000_000 elements"/>
+                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xmy-Uj-ZvX">
+                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="OTP-bh-Wk3">
+                                        <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="659"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Gjj-4t-K7y">
+                                                <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="110"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Insert 1000 elements at the begining of the array one-by-one"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dwr-tY-Mbc">
+                                                <rect key="frame" x="0.0" y="110" width="196.66666666666666" height="109.66666666666669"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Insert 1000 elements at the middle of the array one-by-one"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zDf-Bq-GNr">
+                                                <rect key="frame" x="0.0" y="219.66666666666669" width="196.66666666666666" height="110"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Insert 1000 elements at the end of the array one-by-one"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1JX-p7-kNG">
+                                                <rect key="frame" x="0.0" y="329.66666666666669" width="196.66666666666666" height="109.66666666666669"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Remove 1000 elements at the begining of the array one-by-one"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kzh-PA-fAS">
+                                                <rect key="frame" x="0.0" y="439.33333333333337" width="196.66666666666666" height="110"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Remove1000 elements at the middle of the array one-by-one"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bFZ-Vw-8Cj">
+                                                <rect key="frame" x="0.0" y="549.33333333333337" width="196.66666666666666" height="109.66666666666663"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Remove 1000 elements at the end of the array one-by-one"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UD5-BI-WHC">
+                                        <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="659"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jvx-l8-A9S">
+                                                <rect key="frame" x="0.0" y="0.0" width="196.33333333333334" height="110"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Insert 1000 elements at the begining of the array"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uSC-O7-ptz">
+                                                <rect key="frame" x="0.0" y="110" width="196.33333333333334" height="109.66666666666669"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Insert 1000 elements at the middle of the array"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHT-Jq-SwR">
+                                                <rect key="frame" x="0.0" y="219.66666666666669" width="196.33333333333334" height="110"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Insert 1000 elements at the end of the array "/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lG4-MV-kxh">
+                                                <rect key="frame" x="0.0" y="329.66666666666669" width="196.33333333333334" height="109.66666666666669"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Remove 1000 elements at the begining of the array"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4Bd-Kv-bgv">
+                                                <rect key="frame" x="0.0" y="439.33333333333337" width="196.33333333333334" height="110"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Remove1000 elements at the middle of the array"/>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" reversesTitleShadowWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YTy-lz-OoD">
+                                                <rect key="frame" x="0.0" y="549.33333333333337" width="196.33333333333334" height="109.66666666666663"/>
+                                                <state key="normal" title="Button"/>
+                                                <buttonConfiguration key="configuration" style="plain" title="Remove 1000 elements at the end of the array"/>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="dNf-fG-FXY">
+                                <rect key="frame" x="0.0" y="159" width="393" height="659"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="xQM-TK-mDa">
+                                        <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="659"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="k9j-BR-qEr">
+                                                <rect key="frame" x="0.0" y="0.0" width="196.66666666666666" height="110"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="1yX-P5-mSl">
+                                                <rect key="frame" x="0.0" y="110" width="196.66666666666666" height="109.66666666666669"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="2gL-3Z-mml">
+                                                <rect key="frame" x="0.0" y="219.66666666666669" width="196.66666666666666" height="110"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="DyH-Ke-SmT">
+                                                <rect key="frame" x="0.0" y="329.66666666666669" width="196.66666666666666" height="109.66666666666669"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="gOc-nA-K6w">
+                                                <rect key="frame" x="0.0" y="439.33333333333337" width="196.66666666666666" height="110"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Pun-qi-B1P">
+                                                <rect key="frame" x="0.0" y="549.33333333333337" width="196.66666666666666" height="109.66666666666663"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="8D2-nq-maC">
+                                        <rect key="frame" x="196.66666666666663" y="0.0" width="196.33333333333337" height="659"/>
+                                        <subviews>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="3xY-W2-XyK">
+                                                <rect key="frame" x="0.0" y="0.0" width="196.33333333333334" height="110"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="xUK-mH-pXr">
+                                                <rect key="frame" x="0.0" y="110" width="196.33333333333334" height="109.66666666666669"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="rJH-70-GOi">
+                                                <rect key="frame" x="0.0" y="219.66666666666669" width="196.33333333333334" height="110"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="eS3-EW-IAa">
+                                                <rect key="frame" x="0.0" y="329.66666666666669" width="196.33333333333334" height="109.66666666666669"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="Ltc-5b-W7B">
+                                                <rect key="frame" x="0.0" y="439.33333333333337" width="196.33333333333334" height="110"/>
+                                            </activityIndicatorView>
+                                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="medium" translatesAutoresizingMaskIntoConstraints="NO" id="8y7-Va-h4b">
+                                                <rect key="frame" x="0.0" y="549.33333333333337" width="196.33333333333334" height="109.66666666666663"/>
+                                            </activityIndicatorView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="PWl-hC-SYt"/>
-                        <color key="backgroundColor" systemColor="systemGreenColor"/>
+                        <color key="backgroundColor" systemColor="tertiarySystemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3B3-Vl-zdR" firstAttribute="top" secondItem="PWl-hC-SYt" secondAttribute="top" constant="40" id="17c-s1-bmQ"/>
+                            <constraint firstItem="UJP-bB-8km" firstAttribute="top" secondItem="PWl-hC-SYt" secondAttribute="top" id="5by-Zn-WdM"/>
+                            <constraint firstItem="PWl-hC-SYt" firstAttribute="trailing" secondItem="dNf-fG-FXY" secondAttribute="trailing" id="645-sA-Bhe"/>
+                            <constraint firstItem="PWl-hC-SYt" firstAttribute="bottom" secondItem="dNf-fG-FXY" secondAttribute="bottom" id="85c-iZ-isK"/>
+                            <constraint firstItem="UJP-bB-8km" firstAttribute="leading" secondItem="PWl-hC-SYt" secondAttribute="leading" id="Lsk-lO-oQU"/>
+                            <constraint firstItem="dNf-fG-FXY" firstAttribute="leading" secondItem="PWl-hC-SYt" secondAttribute="leading" id="TmN-ey-4WK"/>
+                            <constraint firstItem="dNf-fG-FXY" firstAttribute="top" secondItem="UJP-bB-8km" secondAttribute="bottom" id="b0J-ye-PRc"/>
+                            <constraint firstItem="3B3-Vl-zdR" firstAttribute="leading" secondItem="PWl-hC-SYt" secondAttribute="leading" constant="186" id="h5C-ld-YdV"/>
+                            <constraint firstItem="PWl-hC-SYt" firstAttribute="trailing" secondItem="UJP-bB-8km" secondAttribute="trailing" id="hmZ-lQ-E7N"/>
+                            <constraint firstItem="PWl-hC-SYt" firstAttribute="bottom" secondItem="xmy-Uj-ZvX" secondAttribute="bottom" id="kbG-Or-pFV"/>
+                            <constraint firstItem="PWl-hC-SYt" firstAttribute="bottom" secondItem="3B3-Vl-zdR" secondAttribute="bottom" constant="699" id="oUn-fI-fZH"/>
+                            <constraint firstItem="xmy-Uj-ZvX" firstAttribute="top" secondItem="UJP-bB-8km" secondAttribute="bottom" id="tDo-Mw-wOw"/>
+                            <constraint firstItem="xmy-Uj-ZvX" firstAttribute="leading" secondItem="PWl-hC-SYt" secondAttribute="leading" id="urp-h2-tKM"/>
+                            <constraint firstItem="PWl-hC-SYt" firstAttribute="trailing" secondItem="3B3-Vl-zdR" secondAttribute="trailing" constant="187" id="vTc-Va-iqx"/>
+                            <constraint firstItem="PWl-hC-SYt" firstAttribute="trailing" secondItem="xmy-Uj-ZvX" secondAttribute="trailing" id="wMm-SB-Rks"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XJJ-UC-gva" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="135" y="699"/>
+            <point key="canvasLocation" x="133.58778625954199" y="698.59154929577471"/>
         </scene>
         <!--Dictionary View Controller-->
         <scene sceneID="UG7-bX-mSq">
@@ -123,14 +279,14 @@
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </systemColor>
         <systemColor name="systemGroupedBackgroundColor">
             <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
         <systemColor name="systemYellowColor">
             <color red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="tertiarySystemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
     </resources>
 </document>
