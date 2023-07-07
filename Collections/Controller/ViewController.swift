@@ -7,11 +7,28 @@
 
 import UIKit
 
+enum CollectionType: String, CaseIterable {
+    case array = "Array"
+    case dictionary = "Dictionary"
+    case set = "Set"
+    
+    var storyboardName: String {
+        switch self {
+        case .array:
+            return "ArrayViewController"
+        case .dictionary:
+            return "DictionaryViewController"
+        case .set:
+            return "SetViewController"
+        }
+    }
+}
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var collectionsTable: UITableView!
     
-    let listOfCollectionsArray = ["Array","Dictionary","Set"]
+    let listOfCollectionsArray = CollectionType.allCases
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,43 +43,25 @@ extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = UITableViewCell()
-        cell.textLabel?.text = listOfCollectionsArray[indexPath.row]
+        cell.textLabel?.text = listOfCollectionsArray[indexPath.row].rawValue
         return cell
     }
-    
 }
 
 extension ViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
         let selectedCollection = listOfCollectionsArray[indexPath.row]
-        
-        var storyboardName: String
-        switch selectedCollection {
-        case "Array":
-            storyboardName = "ArrayViewController"
-            
-        case "Dictionary":
-            storyboardName = "DictionaryViewController"
-        case "Set":
-            storyboardName = "SetViewController"
-        default:
-            return
-        }
+        let storyboardName = selectedCollection.storyboardName
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
-        if let vc = storyboard.instantiateViewController(withIdentifier: storyboardName) as? ArrayViewController {
-            vc.title = listOfCollectionsArray[indexPath.row]
-            navigationController?.pushViewController(vc, animated: true)
-        } else if let vc = storyboard.instantiateViewController(withIdentifier: storyboardName) as? DictionaryViewController {
-            vc.title = listOfCollectionsArray[indexPath.row]
-            navigationController?.pushViewController(vc, animated: true)
-        } else if let vc = storyboard.instantiateViewController(withIdentifier: storyboardName) as? SetViewController {
-            vc.title = listOfCollectionsArray[indexPath.row]
+        if let vc = storyboard.instantiateViewController(withIdentifier: storyboardName) as? UIViewController {
+            vc.title = selectedCollection.rawValue
             navigationController?.pushViewController(vc, animated: true)
         }
-        
     }
 }
+
+
+
 
