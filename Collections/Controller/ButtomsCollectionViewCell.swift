@@ -12,9 +12,14 @@ class ButtomsCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var calculateButtom: UIButton!
     @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
     
+    var buttonTappedAction: (() -> Void)?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
+        calculateButtom.addTarget(self, action: #selector(calculateButtomPressed), for: .touchUpInside)
     }
-
+    
+    @IBAction func calculateButtomPressed(_ sender: Any) {
+        buttonTappedAction?()
+    }
 }

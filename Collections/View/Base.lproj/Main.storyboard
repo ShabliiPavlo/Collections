@@ -77,7 +77,7 @@
                                     <action selector="createArreyButtomPressed:" destination="hPc-Be-7Oh" eventType="touchUpInside" id="m8x-rK-dex"/>
                                 </connections>
                             </button>
-                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zbw-nP-Ejy">
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zbw-nP-Ejy">
                                 <rect key="frame" x="0.0" y="159" width="430" height="739"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="a9U-9k-d48">

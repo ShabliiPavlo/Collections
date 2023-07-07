@@ -32,7 +32,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        collectionsTable.register(UITableViewCell.self, forCellReuseIdentifier: "CollectionCell")
     }
 }
 
@@ -42,7 +42,7 @@ extension ViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = UITableViewCell()
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CollectionCell", for: indexPath)
         cell.textLabel?.text = listOfCollectionsArray[indexPath.row].rawValue
         return cell
     }
