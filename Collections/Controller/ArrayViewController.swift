@@ -12,9 +12,9 @@ class ArrayViewController: UIViewController {
     @IBOutlet weak var createArreyButton: UIButton!
     @IBOutlet weak var createArreyIndicator: UIActivityIndicatorView!
     
-    @IBOutlet weak var collectionOfButtoms: UICollectionView!
+    @IBOutlet weak var collectionOfButtons: UICollectionView!
     
-    let arrayData = ButtomsData()
+    let arrayData = ButtonsData()
     var arrayOfInt = [Int]()
     
     override func viewDidLoad() {
@@ -22,7 +22,7 @@ class ArrayViewController: UIViewController {
         configureUI()
     }
     
-    @IBAction func createArreyButtomPressed(_ sender: UIButton) {
+    @IBAction func createArreyButtonPressed(_ sender: UIButton) {
         
         createArreyIndicator.startAnimating()
         createArreyButton.setTitle("", for: .normal)
@@ -34,44 +34,44 @@ class ArrayViewController: UIViewController {
             
             DispatchQueue.main.async {
                 self.createArreyButton.setTitle(result, for: .normal)
-                self.collectionOfButtomsIsAppears()
+                self.collectionOfButtonsIsAppears()
             }
         }
     }
     
-    func collectionOfButtomsIsAppears() {
-        collectionOfButtoms.isHidden = false
+    func collectionOfButtonsIsAppears() {
+        collectionOfButtons.isHidden = false
         createArreyIndicator.stopAnimating()
     }
     
     func configureUI() {
-        let nib = UINib(nibName: "ButtomsCollectionViewCell", bundle: nil)
-        collectionOfButtoms.register(nib, forCellWithReuseIdentifier: "ButtomsCollectionViewCell")
+        let nib = UINib(nibName: "ButtonsCollectionViewCell", bundle: nil)
+        collectionOfButtons.register(nib, forCellWithReuseIdentifier: "ButtonsCollectionViewCell")
     }
 }
 
 extension ArrayViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return arrayData.arrayOfButtomsNames.count
+        return arrayData.arrayOfButtonsNames.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtomsCollectionViewCell", for: indexPath) as? ButtomsCollectionViewCell else { return UICollectionViewCell() }
-        let buttomTittle = arrayData.arrayOfButtomsNames
-        cell.calculateButtom.setTitle(buttomTittle[indexPath.row], for: .normal)
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonsCollectionViewCell", for: indexPath) as? ButtonsCollectionViewCell else { return UICollectionViewCell() }
+        let buttonTittle = arrayData.arrayOfButtonsNames
+        cell.calculateButton.setTitle(buttonTittle[indexPath.row], for: .normal)
         
         switch indexPath.row {
         case 0:
             cell.buttonTappedAction = {
                 cell.loadIndicator.startAnimating()
-                cell.calculateButtom.setTitle("", for: .normal)
+                cell.calculateButton.setTitle("", for: .normal)
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.insertAtBeginningOneByOne(array: &self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        cell.calculateButtom.setTitle(result, for: .normal)
+                        cell.calculateButton.setTitle(result, for: .normal)
                         cell.loadIndicator.stopAnimating()
                     }
                 }

@@ -16,9 +16,9 @@
 		405948AE2A4D6508000E5DD8 /* ArrayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405948AD2A4D6508000E5DD8 /* ArrayViewController.swift */; };
 		405948B32A4D8B20000E5DD8 /* DictionaryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405948B22A4D8B20000E5DD8 /* DictionaryViewController.swift */; };
 		405948B52A4D8B68000E5DD8 /* SetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405948B42A4D8B68000E5DD8 /* SetViewController.swift */; };
-		40A0C45E2A570EF50062878B /* ButtomsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0C45D2A570EF50062878B /* ButtomsData.swift */; };
-		40D1A1E12A55D42F00976ABC /* ButtomsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D1A1DF2A55D42F00976ABC /* ButtomsCollectionViewCell.swift */; };
-		40D1A1E22A55D42F00976ABC /* ButtomsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40D1A1E02A55D42F00976ABC /* ButtomsCollectionViewCell.xib */; };
+		40A0C45E2A570EF50062878B /* ButtonsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40A0C45D2A570EF50062878B /* ButtonsData.swift */; };
+		40D1A1E12A55D42F00976ABC /* ButtonsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40D1A1DF2A55D42F00976ABC /* ButtonsCollectionViewCell.swift */; };
+		40D1A1E22A55D42F00976ABC /* ButtonsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 40D1A1E02A55D42F00976ABC /* ButtonsCollectionViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,9 +33,9 @@
 		405948AD2A4D6508000E5DD8 /* ArrayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayViewController.swift; sourceTree = "<group>"; };
 		405948B22A4D8B20000E5DD8 /* DictionaryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryViewController.swift; sourceTree = "<group>"; };
 		405948B42A4D8B68000E5DD8 /* SetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetViewController.swift; sourceTree = "<group>"; };
-		40A0C45D2A570EF50062878B /* ButtomsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtomsData.swift; sourceTree = "<group>"; };
-		40D1A1DF2A55D42F00976ABC /* ButtomsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtomsCollectionViewCell.swift; sourceTree = "<group>"; };
-		40D1A1E02A55D42F00976ABC /* ButtomsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtomsCollectionViewCell.xib; sourceTree = "<group>"; };
+		40A0C45D2A570EF50062878B /* ButtonsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsData.swift; sourceTree = "<group>"; };
+		40D1A1DF2A55D42F00976ABC /* ButtonsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonsCollectionViewCell.swift; sourceTree = "<group>"; };
+		40D1A1E02A55D42F00976ABC /* ButtonsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ButtonsCollectionViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +87,7 @@
 				405948AD2A4D6508000E5DD8 /* ArrayViewController.swift */,
 				405948B22A4D8B20000E5DD8 /* DictionaryViewController.swift */,
 				405948B42A4D8B68000E5DD8 /* SetViewController.swift */,
-				40D1A1DF2A55D42F00976ABC /* ButtomsCollectionViewCell.swift */,
+				40D1A1DF2A55D42F00976ABC /* ButtonsCollectionViewCell.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -96,7 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				4059489F2A4B741A000E5DD8 /* Main.storyboard */,
-				40D1A1E02A55D42F00976ABC /* ButtomsCollectionViewCell.xib */,
+				40D1A1E02A55D42F00976ABC /* ButtonsCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -104,7 +104,7 @@
 		405948B12A4D8AE7000E5DD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				40A0C45D2A570EF50062878B /* ButtomsData.swift */,
+				40A0C45D2A570EF50062878B /* ButtonsData.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -170,7 +170,7 @@
 				405948A62A4B741C000E5DD8 /* LaunchScreen.storyboard in Resources */,
 				405948A32A4B741C000E5DD8 /* Assets.xcassets in Resources */,
 				405948A12A4B741A000E5DD8 /* Main.storyboard in Resources */,
-				40D1A1E22A55D42F00976ABC /* ButtomsCollectionViewCell.xib in Resources */,
+				40D1A1E22A55D42F00976ABC /* ButtonsCollectionViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,9 +184,9 @@
 				405948B32A4D8B20000E5DD8 /* DictionaryViewController.swift in Sources */,
 				405948B52A4D8B68000E5DD8 /* SetViewController.swift in Sources */,
 				4059489E2A4B741A000E5DD8 /* ViewController.swift in Sources */,
-				40A0C45E2A570EF50062878B /* ButtomsData.swift in Sources */,
+				40A0C45E2A570EF50062878B /* ButtonsData.swift in Sources */,
 				4059489A2A4B741A000E5DD8 /* AppDelegate.swift in Sources */,
-				40D1A1E12A55D42F00976ABC /* ButtomsCollectionViewCell.swift in Sources */,
+				40D1A1E12A55D42F00976ABC /* ButtonsCollectionViewCell.swift in Sources */,
 				405948AE2A4D6508000E5DD8 /* ArrayViewController.swift in Sources */,
 				4059489C2A4B741A000E5DD8 /* SceneDelegate.swift in Sources */,
 			);

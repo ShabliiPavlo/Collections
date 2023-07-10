@@ -74,10 +74,10 @@
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="gray" title="Create Int arrey whith 10_000_000 elements"/>
                                 <connections>
-                                    <action selector="createArreyButtomPressed:" destination="hPc-Be-7Oh" eventType="touchUpInside" id="m8x-rK-dex"/>
+                                    <action selector="createArreyButtonPressed:" destination="hPc-Be-7Oh" eventType="touchUpInside" id="m8x-rK-dex"/>
                                 </connections>
                             </button>
-                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zbw-nP-Ejy">
+                            <collectionView hidden="YES" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="zbw-nP-Ejy" userLabel="Collection Of Buttons">
                                 <rect key="frame" x="0.0" y="159" width="430" height="739"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="a9U-9k-d48">
@@ -111,7 +111,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="collectionOfButtoms" destination="zbw-nP-Ejy" id="2r2-UB-bWd"/>
+                        <outlet property="collectionOfButtons" destination="zbw-nP-Ejy" id="2r2-UB-bWd"/>
                         <outlet property="createArreyButton" destination="UJP-bB-8km" id="bew-DX-tf6"/>
                         <outlet property="createArreyIndicator" destination="3B3-Vl-zdR" id="rQJ-iT-hL9"/>
                     </connections>
