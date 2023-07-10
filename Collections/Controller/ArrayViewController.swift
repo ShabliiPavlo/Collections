@@ -58,26 +58,44 @@ extension ArrayViewController: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonsCollectionViewCell", for: indexPath) as? ButtonsCollectionViewCell else { return UICollectionViewCell() }
+        
+        func updateBeforeCalculation() {
+            cell.loadIndicator.startAnimating()
+            cell.calculateButton.setTitle("", for: .normal)
+        }
+        
+        func updateAfterCalculation(title:String) {
+            cell.calculateButton.setTitle(title, for: .normal)
+            cell.loadIndicator.stopAnimating()
+        }
+        
         let buttonTittle = arrayData.arrayOfButtonsNames
         cell.calculateButton.setTitle(buttonTittle[indexPath.row], for: .normal)
         
         switch indexPath.row {
         case 0:
             cell.buttonTappedAction = {
-                cell.loadIndicator.startAnimating()
-                cell.calculateButton.setTitle("", for: .normal)
+                updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.insertAtBeginningOneByOne(array: &self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        cell.calculateButton.setTitle(result, for: .normal)
-                        cell.loadIndicator.stopAnimating()
+                        updateAfterCalculation(title:result)
                     }
                 }
             }
         case 1:
             cell.buttonTappedAction = {
+                updateBeforeCalculation()
+                DispatchQueue.global().async {
+                    let result = self.arrayData.measureExecutionTime {
+                        self.arrayData.insertInMiddleOneByOne(array: &self.arrayOfInt)
+                    }
+                    DispatchQueue.main.async {
+                        updateAfterCalculation(title:result)
+                    }
+                }
             }
             
         default:
