@@ -78,7 +78,7 @@ extension ArrayViewController: UICollectionViewDataSource {
                 updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
-                        self.arrayData.insertAtBeginningOneByOne(array: &self.arrayOfInt)
+                        self.arrayData.insertAtBeginningOneByOne(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
                         updateAfterCalculation(title:result)
@@ -90,7 +90,7 @@ extension ArrayViewController: UICollectionViewDataSource {
                 updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
-                        self.arrayData.insertInMiddleOneByOne(array: &self.arrayOfInt)
+                        self.arrayData.insertInMiddleOneByOne(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
                         updateAfterCalculation(title:result)

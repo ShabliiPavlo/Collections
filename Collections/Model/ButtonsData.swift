@@ -32,22 +32,34 @@ struct ButtonsData {
         return String(executionTime)
     }
     
-    func insertAtBeginningOneByOne(array: inout [Int]) {
+    func insertAtBeginningOneByOne(array: [Int]) -> [Int] {
+        var modifiedArray = array
+        
         for i in 0...999 {
-            array.insert(i, at: 0)
+            modifiedArray.insert(i, at: 0)
         }
+        
+        return modifiedArray
     }
 
-    func insertAtBeginningAtOnce(array: inout [Int]) {
+    func insertAtBeginningAtOnce(array: [Int]) -> [Int] {
+        var modifiedArray = array
+        
         let elementsToInsert = Array(0...999)
-        array.insert(contentsOf: elementsToInsert, at: 0)
+        modifiedArray.insert(contentsOf: elementsToInsert, at: 0)
+        
+        return modifiedArray
     }
 
-    func insertInMiddleOneByOne(array: inout [Int]) {
+    func insertInMiddleOneByOne(array: [Int]) -> [Int] {
+        var modifiedArray = array
+        
         let middleIndex = array.count / 2
         for i in 0...999 {
-            array.insert(i, at: middleIndex)
+            modifiedArray.insert(i, at: middleIndex)
         }
+        
+        return modifiedArray
     }
 
     func insertInMiddleAtOnce(array: inout [Int]) {
