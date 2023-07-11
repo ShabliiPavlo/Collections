@@ -32,26 +32,25 @@ struct ButtonsData {
         return String(executionTime)
     }
     
-    func insertAtBeginningOneByOne(array: [Int]) -> [Int] {
+    func insertAtBeginningOneByOne(array: [Int])  {
         var modifiedArray = array
         
         for i in 0...999 {
             modifiedArray.insert(i, at: 0)
         }
         
-        return modifiedArray
+        
     }
-
-    func insertAtBeginningAtOnce(array: [Int]) -> [Int] {
+    
+    func insertAtBeginningAtOnce(array: [Int]) {
         var modifiedArray = array
         
         let elementsToInsert = Array(0...999)
         modifiedArray.insert(contentsOf: elementsToInsert, at: 0)
         
-        return modifiedArray
     }
-
-    func insertInMiddleOneByOne(array: [Int]) -> [Int] {
+    
+    func insertInMiddleOneByOne(array: [Int])  {
         var modifiedArray = array
         
         let middleIndex = array.count / 2
@@ -59,56 +58,96 @@ struct ButtonsData {
             modifiedArray.insert(i, at: middleIndex)
         }
         
-        return modifiedArray
     }
-
-    func insertInMiddleAtOnce(array: inout [Int]) {
-        let middleIndex = array.count / 2
-        let elementsToInsert = Array(0...999)
-        array.insert(contentsOf: elementsToInsert, at: middleIndex)
-    }
-
-    func appendToEndOneByOne(array: inout [Int]) {
+    
+    func insertElementsAtBeginningOneByOne(array: [Int]) {
+        var modifiedArray = array
+        
         for i in 0...999 {
-            array.append(array.count + i)
+            modifiedArray.insert(i, at: 0)
         }
     }
-
-    func appendToEndAtOnce(array: inout [Int]) {
-        let elementsToInsert = Array(array.count...(array.count + 999))
-        array.append(contentsOf: elementsToInsert)
+    
+    func insertElementsAtBeginningAtOnce(array: [Int]) {
+        var modifiedArray = array
+        
+        let elementsToInsert = Array(0...999)
+        modifiedArray.insert(contentsOf: elementsToInsert, at: 0)
     }
-
-    func removeFromBeginningOneByOne(array: inout [Int]) {
-        for _ in 0...999 {
-            array.remove(at: 0)
-        }
-    }
-
-    func removeFromBeginningAtOnce(array: inout [Int]) {
-        array.removeFirst(1000)
-    }
-
-    func removeFromMiddleOneByOne(array: inout [Int]) {
+    
+    func insertElementsAtMiddleOneByOne(array: [Int]) {
+        var modifiedArray = array
+        
         let middleIndex = array.count / 2
-        for _ in 0...999 {
-            array.remove(at: middleIndex)
+        for i in 0...999 {
+            modifiedArray.insert(i, at: middleIndex)
         }
     }
-
-    func removeFromMiddleAtOnce(array: inout [Int]) {
+    
+    func insertElementsAtMiddleAtOnce(array: [Int]) {
+        var modifiedArray = array
+        
+        let middleIndex = modifiedArray.count / 2
+        let elementsToInsert = Array(0...999)
+        modifiedArray.insert(contentsOf: elementsToInsert, at: middleIndex)
+    }
+    
+    func insertElementsAtEndOneByOne(array: [Int]) {
+        var modifiedArray = array
+        
+        for i in 0...999 {
+            modifiedArray.append(modifiedArray.count + i)
+        }
+    }
+    
+    func insertElementsAtEndAtOnce(array: [Int]) {
+        var modifiedArray = array
+        
+        let elementsToInsert = Array(modifiedArray.count...(modifiedArray.count + 999))
+        modifiedArray.append(contentsOf: elementsToInsert)
+    }
+    
+    func removeElementsFromBeginningOneByOne(array: [Int]) {
+        var modifiedArray = array
+        
+        for _ in 0...999 {
+            modifiedArray.remove(at: 0)
+        }
+    }
+    
+    func removeElementsFromBeginningAtOnce(array: [Int]) {
+        var modifiedArray = array
+        
+        modifiedArray.removeFirst(1000)
+    }
+    
+    func removeElementsFromMiddleOneByOne(array: [Int]) {
+        var modifiedArray = array
+        
+        let middleIndex = modifiedArray.count / 2
+        for _ in 0...999 {
+            modifiedArray.remove(at: middleIndex)
+        }
+    }
+    
+    func removeElementsFromMiddleAtOnce(array: [Int]) {
+        var modifiedArray = array
+        
         let middleIndex = array.count / 2
-        array.removeSubrange(middleIndex..<(middleIndex + 1000))
+        modifiedArray.removeSubrange(middleIndex..<(middleIndex + 1000))
     }
-
-    func removeFromEndOneByOne(array: inout [Int]) {
+    
+    func removeElementsFromEndOneByOne(array: [Int]) {
+        var modifiedArray = array
+        
         for _ in 0...999 {
-            array.removeLast()
+            modifiedArray.removeLast()
         }
     }
-
-    func removeFromEndAtOnce(array: inout [Int]) {
-        array.removeLast(1000)
+    
+    func removeElementsFromEndAtOnce(array: [Int]) {
+        var modifiedArray = array
+        
+        modifiedArray.removeLast(1000)
     }
-
 }
