@@ -85,8 +85,8 @@
 			children = (
 				4059489D2A4B741A000E5DD8 /* ViewController.swift */,
 				405948AD2A4D6508000E5DD8 /* ArrayViewController.swift */,
-				405948B22A4D8B20000E5DD8 /* DictionaryViewController.swift */,
 				405948B42A4D8B68000E5DD8 /* SetViewController.swift */,
+				405948B22A4D8B20000E5DD8 /* DictionaryViewController.swift */,
 				40D1A1DF2A55D42F00976ABC /* ButtonsCollectionViewCell.swift */,
 			);
 			path = Controller;
