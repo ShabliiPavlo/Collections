@@ -239,9 +239,9 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="allCharactersLable" destination="OZ2-i1-JE5" id="jCn-e5-ngR"/>
-                        <outlet property="allMatchingLable" destination="ihk-fW-SOa" id="u5u-7c-gKr"/>
-                        <outlet property="allUniqueLable" destination="Sj6-jM-co6" id="YJB-Uo-vyK"/>
+                        <outlet property="allCharactersLabel" destination="OZ2-i1-JE5" id="jCn-e5-ngR"/>
+                        <outlet property="allMatchingLabel" destination="ihk-fW-SOa" id="u5u-7c-gKr"/>
+                        <outlet property="allUniqueLabel" destination="Sj6-jM-co6" id="YJB-Uo-vyK"/>
                         <outlet property="bottomTextField" destination="4Ut-v3-bBb" id="Vrh-7R-u3v"/>
                         <outlet property="topTextField" destination="XDy-yX-VHj" id="muj-eQ-FTs"/>
                     </connections>

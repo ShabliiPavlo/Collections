@@ -12,9 +12,9 @@ class SetViewController: UIViewController {
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
-    @IBOutlet weak var allMatchingLable: UILabel!
-    @IBOutlet weak var allCharactersLable: UILabel!
-    @IBOutlet weak var allUniqueLable: UILabel!
+    @IBOutlet weak var allMatchingLabel: UILabel!
+    @IBOutlet weak var allCharactersLabel: UILabel!
+    @IBOutlet weak var allUniqueLabel: UILabel!
     
     var topTextFieldSet: Set<Character> = []
     var bottomTextFieldSet: Set<Character> = []
@@ -28,20 +28,28 @@ class SetViewController: UIViewController {
     @IBAction func allMatchingLableButton(_ sender: Any) {
         appendDataToSet()
         let commonElements = topTextFieldSet.intersection(bottomTextFieldSet)
-        allMatchingLable.text = String(commonElements)
-        allMatchingLable.isHidden = false
+        allMatchingLabel.text = String(commonElements)
+        allMatchingLabel.isHidden = false
+        refreshSets()
     }
     @IBAction func allCharactersLableButton(_ sender: Any) {
         appendDataToSet()
         let uniqueElements = topTextFieldSet.symmetricDifference(bottomTextFieldSet)
-        allCharactersLable.text = String(uniqueElements)
-        allCharactersLable.isHidden = false
+        allCharactersLabel.text = String(uniqueElements)
+        allCharactersLabel.isHidden = false
+        refreshSets()
     }
     @IBAction func allUniqueLableButton(_ sender: Any) {
         appendDataToSet()
         let uniqueTopSetElements = topTextFieldSet.subtracting(bottomTextFieldSet)
-        allUniqueLable.text = String(uniqueTopSetElements)
-        allUniqueLable.isHidden = false
+        allUniqueLabel.text = String(uniqueTopSetElements)
+        allUniqueLabel.isHidden = false
+        refreshSets()
+    }
+    
+    func refreshSets() {
+         topTextFieldSet = []
+         bottomTextFieldSet = []
     }
     
     func appendDataToSet() {
@@ -56,12 +64,17 @@ class SetViewController: UIViewController {
 }
 
 extension SetViewController: UITextFieldDelegate {
-    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+    func textFieldDidChangeSelection(_ textField: UITextField) {
         if textField == topTextField {
             topText = textField.text ?? ""
         } else if textField == bottomTextField {
             bottomText = textField.text ?? ""
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        topTextField.resignFirstResponder()
+        bottomTextField.resignFirstResponder()
         return true
     }
 }
