@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ArrayButtonsData {
+struct ArrayButtonsData: MeasureExecutionTime {
     let arrayOfButtonsNames = [
         "Insert 1000 elements at the begining of the array one-by-one",
         "Insert 1000 elements at the middle of the array one-by-one",
@@ -22,15 +22,6 @@ struct ArrayButtonsData {
         "Remove1000 elements at the middle of the array",
         "Remove 1000 elements at the end of the array"
     ]
-    
-    func measureExecutionTime(task: () -> Void) -> String {
-        let startTime = CFAbsoluteTimeGetCurrent()
-        task()
-        let endTime = CFAbsoluteTimeGetCurrent()
-        
-        let executionTime = endTime - startTime
-        return String(executionTime)
-    }
     
     func insertAtBeginningOneByOne(array: [Int])  {
         var modifiedArray = array

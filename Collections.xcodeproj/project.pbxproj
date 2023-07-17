@@ -10,6 +10,7 @@
 		403676F62A6561C6007DC043 /* DictionaryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403676F42A6561C6007DC043 /* DictionaryCollectionViewCell.swift */; };
 		403676F72A6561C6007DC043 /* DictionaryCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 403676F52A6561C6007DC043 /* DictionaryCollectionViewCell.xib */; };
 		403676FB2A659019007DC043 /* DictionaryButtonsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403676FA2A659019007DC043 /* DictionaryButtonsData.swift */; };
+		403676FD2A659353007DC043 /* MeasureExecutionTimeProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 403676FC2A659353007DC043 /* MeasureExecutionTimeProtocol.swift */; };
 		4059489A2A4B741A000E5DD8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 405948992A4B741A000E5DD8 /* AppDelegate.swift */; };
 		4059489C2A4B741A000E5DD8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059489B2A4B741A000E5DD8 /* SceneDelegate.swift */; };
 		4059489E2A4B741A000E5DD8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4059489D2A4B741A000E5DD8 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 		403676F42A6561C6007DC043 /* DictionaryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryCollectionViewCell.swift; sourceTree = "<group>"; };
 		403676F52A6561C6007DC043 /* DictionaryCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = DictionaryCollectionViewCell.xib; sourceTree = "<group>"; };
 		403676FA2A659019007DC043 /* DictionaryButtonsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryButtonsData.swift; sourceTree = "<group>"; };
+		403676FC2A659353007DC043 /* MeasureExecutionTimeProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeasureExecutionTimeProtocol.swift; sourceTree = "<group>"; };
 		405948962A4B741A000E5DD8 /* Collections.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Collections.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		405948992A4B741A000E5DD8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4059489B2A4B741A000E5DD8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,36 +83,36 @@
 			path = DictionaryViewController;
 			sourceTree = "<group>";
 		};
-		403676F22A656158007DC043 /* ArrayViewController */ = {
+		403676F22A656158007DC043 /* ArrayView */ = {
 			isa = PBXGroup;
 			children = (
 				40D1A1E02A55D42F00976ABC /* ButtonsCollectionViewCell.xib */,
 			);
-			path = ArrayViewController;
+			path = ArrayView;
 			sourceTree = "<group>";
 		};
-		403676F32A65618E007DC043 /* DictionaryViewController */ = {
+		403676F32A65618E007DC043 /* DictionaryView */ = {
 			isa = PBXGroup;
 			children = (
 				403676F52A6561C6007DC043 /* DictionaryCollectionViewCell.xib */,
 			);
-			path = DictionaryViewController;
+			path = DictionaryView;
 			sourceTree = "<group>";
 		};
-		403676F82A6569D6007DC043 /* ArrayViewController */ = {
+		403676F82A6569D6007DC043 /* ArrayData */ = {
 			isa = PBXGroup;
 			children = (
 				40A0C45D2A570EF50062878B /* ArrayButtonsData.swift */,
 			);
-			path = ArrayViewController;
+			path = ArrayData;
 			sourceTree = "<group>";
 		};
-		403676F92A658FFC007DC043 /* DictionaryViewController */ = {
+		403676F92A658FFC007DC043 /* DictionaryData */ = {
 			isa = PBXGroup;
 			children = (
 				403676FA2A659019007DC043 /* DictionaryButtonsData.swift */,
 			);
-			path = DictionaryViewController;
+			path = DictionaryData;
 			sourceTree = "<group>";
 		};
 		4059488D2A4B741A000E5DD8 = {
@@ -151,6 +153,7 @@
 				403676ED2A6541DB007DC043 /* ArrayViewController */,
 				403676EE2A654204007DC043 /* SetViewController */,
 				403676EF2A654216007DC043 /* DictionaryViewController */,
+				403676FC2A659353007DC043 /* MeasureExecutionTimeProtocol.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,8 +162,8 @@
 			isa = PBXGroup;
 			children = (
 				4059489F2A4B741A000E5DD8 /* Main.storyboard */,
-				403676F32A65618E007DC043 /* DictionaryViewController */,
-				403676F22A656158007DC043 /* ArrayViewController */,
+				403676F32A65618E007DC043 /* DictionaryView */,
+				403676F22A656158007DC043 /* ArrayView */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -168,8 +171,8 @@
 		405948B12A4D8AE7000E5DD8 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				403676F92A658FFC007DC043 /* DictionaryViewController */,
-				403676F82A6569D6007DC043 /* ArrayViewController */,
+				403676F92A658FFC007DC043 /* DictionaryData */,
+				403676F82A6569D6007DC043 /* ArrayData */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				405948B52A4D8B68000E5DD8 /* SetViewController.swift in Sources */,
 				4059489E2A4B741A000E5DD8 /* ViewController.swift in Sources */,
 				403676F62A6561C6007DC043 /* DictionaryCollectionViewCell.swift in Sources */,
+				403676FD2A659353007DC043 /* MeasureExecutionTimeProtocol.swift in Sources */,
 				40A0C45E2A570EF50062878B /* ArrayButtonsData.swift in Sources */,
 				403676FB2A659019007DC043 /* DictionaryButtonsData.swift in Sources */,
 				4059489A2A4B741A000E5DD8 /* AppDelegate.swift in Sources */,

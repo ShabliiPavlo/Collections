@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DictionaryButtonsData {
+struct DictionaryButtonsData: MeasureExecutionTime {
     
     var buttonTitles = ["Find the first contact", "Find the first contact", "Find the last contac", "Find the last contac", "Searchfor a non-existing element", "Searchfor a non-existing element"]
     
