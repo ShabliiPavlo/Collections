@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct ButtonsData {
+struct ArrayButtonsData {
     let arrayOfButtonsNames = [
         "Insert 1000 elements at the begining of the array one-by-one",
         "Insert 1000 elements at the middle of the array one-by-one",

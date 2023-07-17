@@ -14,7 +14,7 @@ class ArrayViewController: UIViewController {
     
     @IBOutlet weak var collectionOfButtons: UICollectionView!
     
-    let arrayData = ButtonsData()
+    let arrayData = ArrayButtonsData()
     var arrayOfInt = [Int]()
     
     override func viewDidLoad() {

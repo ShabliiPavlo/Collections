@@ -5,6 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21678"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="collection view cell content view" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -127,9 +128,57 @@
                     <view key="view" contentMode="scaleToFill" id="38u-xH-FRB">
                         <rect key="frame" x="0.0" y="0.0" width="430" height="932"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Array                                           Dictionary " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uXz-m6-6YM">
+                                <rect key="frame" x="0.0" y="59" width="430" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="wrU-ZI-9x1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="3at-wR-gA2">
+                                <rect key="frame" x="0.0" y="99" width="430" height="799"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="tintColor" systemColor="tintColor"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="0.0" id="vGp-jj-euN">
+                                    <size key="itemSize" width="128" height="128"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="G74-fR-Kn2">
+                                        <rect key="frame" x="2" y="2" width="128" height="128"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="2n2-Af-3m2">
+                                            <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </collectionViewCellContentView>
+                                    </collectionViewCell>
+                                </cells>
+                                <connections>
+                                    <outlet property="dataSource" destination="S4f-92-Fjc" id="zQW-Qd-VFK"/>
+                                    <outlet property="delegate" destination="S4f-92-Fjc" id="CWw-Nt-Yoq"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="Nyo-Km-5Em"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="uXz-m6-6YM" firstAttribute="top" secondItem="Nyo-Km-5Em" secondAttribute="top" id="0cm-32-Uw6"/>
+                            <constraint firstItem="3at-wR-gA2" firstAttribute="top" secondItem="uXz-m6-6YM" secondAttribute="bottom" id="6Gk-ru-440"/>
+                            <constraint firstItem="Nyo-Km-5Em" firstAttribute="trailing" secondItem="uXz-m6-6YM" secondAttribute="trailing" id="9Ff-0h-ouM"/>
+                            <constraint firstItem="3at-wR-gA2" firstAttribute="leading" secondItem="Nyo-Km-5Em" secondAttribute="leading" id="Bv0-kM-ylg"/>
+                            <constraint firstItem="uXz-m6-6YM" firstAttribute="leading" secondItem="Nyo-Km-5Em" secondAttribute="leading" id="Wo9-4C-p35"/>
+                            <constraint firstItem="Nyo-Km-5Em" firstAttribute="trailing" secondItem="3at-wR-gA2" secondAttribute="trailing" id="i3r-WE-qxm"/>
+                            <constraint firstItem="Nyo-Km-5Em" firstAttribute="bottom" secondItem="3at-wR-gA2" secondAttribute="bottom" id="omo-11-v6R"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="thirdScreenButtonsCollection" destination="3at-wR-gA2" id="HDZ-C0-Si6"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gxi-Yw-Mut" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -275,6 +324,9 @@
         </systemColor>
         <systemColor name="tertiarySystemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="tintColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>
