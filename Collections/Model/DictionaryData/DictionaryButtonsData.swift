@@ -11,20 +11,6 @@ struct DictionaryButtonsData: MeasureExecutionTime {
     
     var buttonTitles = ["Find the first contact", "Find the first contact", "Find the last contac", "Find the last contac", "Searchfor a non-existing element", "Searchfor a non-existing element"]
     
-    func appendDataToArray(array:[String]) {
-        var mod = array
-        for index in 1...10_000_000 {
-            mod.append("Name\(index)")
-        }
-    }
-    
-    func appendDataToDictionary(dictionary:[String:String]) {
-        var mod = dictionary
-        for value in 1...10_000_000 {
-            mod["Name\(value)"] = String(value)
-        }
-    }
-    
     func findFirstArrayElement(array:[String]) {
         print(array.first ?? "Default")
     }

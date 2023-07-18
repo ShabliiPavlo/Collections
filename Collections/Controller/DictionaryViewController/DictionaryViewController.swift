@@ -18,8 +18,21 @@ class DictionaryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configUI()
-        dictionaryButtonsData.appendDataToArray(array: arrayOfNames)
-        dictionaryButtonsData.appendDataToDictionary(dictionary: dictionaryOfNames)
+        appendDataToArray(&arrayOfNames)
+        appendDataToDictionary(dictionary: &dictionaryOfNames)
+        print(dictionaryOfNames.count)
+    }
+    
+    func appendDataToArray(_ array: inout [String]) {
+            for index in 1...10_000_000 {
+                array.append("Name\(index)")
+            }
+        }
+    
+    func appendDataToDictionary(dictionary: inout [String:String]) {
+        for value in 1...10_000_000 {
+            dictionary["Name\(value)"] = String(value)
+        }
     }
     
     func configUI() {

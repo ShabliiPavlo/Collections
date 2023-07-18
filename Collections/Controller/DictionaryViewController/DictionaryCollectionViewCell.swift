@@ -18,5 +18,4 @@ class DictionaryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
        
     }
-
 }
