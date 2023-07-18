@@ -10,6 +10,9 @@ import UIKit
 class DictionaryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var buttonName: UILabel!
+    @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
+    
+    var cellTappedAction: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()

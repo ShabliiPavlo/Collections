@@ -11,12 +11,15 @@ class DictionaryViewController: UIViewController {
     
     @IBOutlet weak var thirdScreenButtonsCollection: UICollectionView!
     
-    let dictionaryButtonsData = DictionaryButtonsData()
+    var dictionaryButtonsData = DictionaryButtonsData()
+    var arrayOfNames = [String]()
+    var dictionaryOfNames = [String:String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         configUI()
+        dictionaryButtonsData.appendDataToArray(array: arrayOfNames)
+        dictionaryButtonsData.appendDataToDictionary(dictionary: dictionaryOfNames)
     }
     
     func configUI() {
@@ -31,7 +34,7 @@ extension DictionaryViewController: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DictionaryCollectionViewCell", for: indexPath) as! DictionaryCollectionViewCell
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "DictionaryCollectionViewCell", for: indexPath) as? DictionaryCollectionViewCell else { return UICollectionViewCell() }
         cell.buttonName.text =  dictionaryButtonsData.buttonTitles[indexPath.row]
         return cell
     }
@@ -53,6 +56,33 @@ extension DictionaryViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         let cell = collectionView.cellForItem(at: indexPath) as! DictionaryCollectionViewCell
-        cell.buttonName.text = "lol"
+
+        func updateBeforeCalculation() {
+            cell.loadIndicator.startAnimating()
+            cell.buttonName.text = ""
+        }
+
+        func updateAfterCalculation(title:String) {
+            cell.buttonName.text = title
+            cell.loadIndicator.stopAnimating()
+        }
+
+        switch indexPath.row {
+        case 0:
+            cell.cellTappedAction?()
+            cell.cellTappedAction = {
+                updateBeforeCalculation()
+                DispatchQueue.global().async {
+                    let result = self.dictionaryButtonsData.measureExecutionTime {
+                        self.dictionaryButtonsData.findFirstArrayElement(array: self.arrayOfNames)
+                    }
+                    DispatchQueue.main.async {
+                        updateAfterCalculation(title:result)
+                    }
+                }
+            }
+        default:
+            cell.cellTappedAction = nil
+        }
     }
 }
