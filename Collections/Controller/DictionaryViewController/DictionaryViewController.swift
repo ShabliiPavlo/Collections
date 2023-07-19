@@ -131,7 +131,7 @@ extension DictionaryViewController: UICollectionViewDelegateFlowLayout {
                     }
                 }
         default:
-            cell.cellTappedAction = nil
+            cell.updateBeforeCalculation()
         }
     }
 }
