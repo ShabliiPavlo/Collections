@@ -8,7 +8,7 @@
 import UIKit
 
 class SetViewController: UIViewController {
-
+    
     @IBOutlet weak var topTextField: UITextField!
     @IBOutlet weak var bottomTextField: UITextField!
     
@@ -16,10 +16,10 @@ class SetViewController: UIViewController {
     @IBOutlet weak var allCharactersLabel: UILabel!
     @IBOutlet weak var allUniqueLabel: UILabel!
     
-    var topTextFieldSet: Set<Character> = []
-    var bottomTextFieldSet: Set<Character> = []
-    var topText = ""
-    var bottomText = ""
+    private var topTextFieldSet: Set<Character> = []
+    private var bottomTextFieldSet: Set<Character> = []
+    private var topText = ""
+    private var bottomText = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,8 +48,8 @@ class SetViewController: UIViewController {
     }
     
     func refreshSets() {
-         topTextFieldSet = []
-         bottomTextFieldSet = []
+        topTextFieldSet = []
+        bottomTextFieldSet = []
     }
     
     func appendDataToSet() {

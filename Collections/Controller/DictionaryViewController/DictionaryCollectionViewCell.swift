@@ -10,7 +10,7 @@ import UIKit
 class DictionaryCollectionViewCell: UICollectionViewCell {
     
     @IBOutlet weak var buttonName: UILabel!
-    @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var loadIndicator: UIActivityIndicatorView!
     
     var cellTappedAction: (() -> Void)?
     

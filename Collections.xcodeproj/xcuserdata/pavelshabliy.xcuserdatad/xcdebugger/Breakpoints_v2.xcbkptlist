@@ -49,6 +49,21 @@
                   endingLineNumber = "121"
                   offsetFromSymbolStart = "59">
                </Location>
+               <Location
+                  uuid = "7285F325-A5BD-45D0-9A14-220A8F80C522 - 82a2b65db06d3f8d"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #2 @Swift.MainActor () -&gt; () in closure #5 () -&gt; () in Collections.DictionaryViewController.collectionView(_: __C.UICollectionView, didSelectItemAt: Foundation.IndexPath) -&gt; ()"
+                  moduleName = "Collections"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/pavelshabliy/Desktop/Fox/collections/collections/Collections/Controller/DictionaryViewController/DictionaryViewController.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "120"
+                  endingLineNumber = "120"
+                  offsetFromSymbolStart = "59">
+               </Location>
             </Locations>
          </BreakpointContent>
       </BreakpointProxy>

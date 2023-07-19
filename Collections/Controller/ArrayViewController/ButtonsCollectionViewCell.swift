@@ -10,7 +10,7 @@ import UIKit
 class ButtonsCollectionViewCell: UICollectionViewCell {
 
     @IBOutlet weak var calculateButton: UIButton!
-    @IBOutlet weak var loadIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var loadIndicator: UIActivityIndicatorView!
     
     var buttonTappedAction: (() -> Void)?
     
@@ -21,5 +21,15 @@ class ButtonsCollectionViewCell: UICollectionViewCell {
     
     @IBAction func calculateButtonPressed(_ sender: Any) {
         buttonTappedAction?()
+    }
+    
+    func updateBeforeCalculation() {
+        loadIndicator.startAnimating()
+        calculateButton.setTitle("", for: .normal)
+    }
+    
+    func updateAfterCalculation(title:String) {
+        calculateButton.setTitle(title, for: .normal)
+        loadIndicator.stopAnimating()
     }
 }

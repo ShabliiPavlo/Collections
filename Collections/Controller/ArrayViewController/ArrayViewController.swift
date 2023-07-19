@@ -9,8 +9,8 @@ import UIKit
 
 class ArrayViewController: UIViewController {
     
-    @IBOutlet weak var createArreyButton: UIButton!
-    @IBOutlet weak var createArreyIndicator: UIActivityIndicatorView!
+    @IBOutlet private weak var createArreyButton: UIButton!
+    @IBOutlet private weak var createArreyIndicator: UIActivityIndicatorView!
     
     @IBOutlet weak var collectionOfButtons: UICollectionView!
     
@@ -59,15 +59,7 @@ extension ArrayViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ButtonsCollectionViewCell", for: indexPath) as? ButtonsCollectionViewCell else { return UICollectionViewCell() }
         
-        func updateBeforeCalculation() {
-            cell.loadIndicator.startAnimating()
-            cell.calculateButton.setTitle("", for: .normal)
-        }
         
-        func updateAfterCalculation(title:String) {
-            cell.calculateButton.setTitle(title, for: .normal)
-            cell.loadIndicator.stopAnimating()
-        }
         
         let buttonTittle = arrayData.arrayOfButtonsNames
         cell.calculateButton.setTitle(buttonTittle[indexPath.row], for: .normal)
@@ -75,145 +67,145 @@ extension ArrayViewController: UICollectionViewDataSource {
         switch indexPath.row {
         case 0:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.insertAtBeginningOneByOne(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 1:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.insertInMiddleOneByOne(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 2:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.insertElementsAtEndOneByOne(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 3:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.removeElementsFromBeginningOneByOne(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 4:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.removeElementsFromMiddleOneByOne(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 5:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.removeElementsFromEndOneByOne(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 6:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.insertElementsAtBeginningAtOnce(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 7:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.insertElementsAtMiddleAtOnce(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 8:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.insertElementsAtEndAtOnce(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 9:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.removeElementsFromBeginningAtOnce(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 10:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.removeElementsFromMiddleAtOnce(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
         case 11:
             cell.buttonTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.arrayData.measureExecutionTime {
                         self.arrayData.removeElementsFromEndAtOnce(array: self.arrayOfInt)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
             }
