@@ -20,7 +20,6 @@ class DictionaryViewController: UIViewController {
         configUI()
         appendDataToArray(&arrayOfNames)
         appendDataToDictionary(dictionary: &dictionaryOfNames)
-        print(dictionaryOfNames.count)
     }
     
     func appendDataToArray(_ array: inout [String]) {
@@ -70,30 +69,67 @@ extension DictionaryViewController: UICollectionViewDelegateFlowLayout {
         
         let cell = collectionView.cellForItem(at: indexPath) as! DictionaryCollectionViewCell
 
-        func updateBeforeCalculation() {
-            cell.loadIndicator.startAnimating()
-            cell.buttonName.text = ""
-        }
-
-        func updateAfterCalculation(title:String) {
-            cell.buttonName.text = title
-            cell.loadIndicator.stopAnimating()
-        }
-
         switch indexPath.row {
         case 0:
-            cell.cellTappedAction?()
-            cell.cellTappedAction = {
-                updateBeforeCalculation()
+                cell.updateBeforeCalculation()
                 DispatchQueue.global().async {
                     let result = self.dictionaryButtonsData.measureExecutionTime {
                         self.dictionaryButtonsData.findFirstArrayElement(array: self.arrayOfNames)
                     }
                     DispatchQueue.main.async {
-                        updateAfterCalculation(title:result)
+                        cell.updateAfterCalculation(title:result)
                     }
                 }
-            }
+        case 1:
+                cell.updateBeforeCalculation()
+                DispatchQueue.global().async {
+                    let result = self.dictionaryButtonsData.measureExecutionTime {
+                        self.dictionaryButtonsData.findFirstDictionaryElement(dictionary: self.dictionaryOfNames)
+                    }
+                    DispatchQueue.main.async {
+                        cell.updateAfterCalculation(title:result)
+                    }
+                }
+        case 2:
+                cell.updateBeforeCalculation()
+                DispatchQueue.global().async {
+                    let result = self.dictionaryButtonsData.measureExecutionTime {
+                        self.dictionaryButtonsData.findLastArrayElement(array: self.arrayOfNames)
+                    }
+                    DispatchQueue.main.async {
+                        cell.updateAfterCalculation(title:result)
+                    }
+                }
+        case 3:
+                cell.updateBeforeCalculation()
+                DispatchQueue.global().async {
+                    let result = self.dictionaryButtonsData.measureExecutionTime {
+                        self.dictionaryButtonsData.findLastDictionaryElement(dictionary: self.dictionaryOfNames)
+                    }
+                    DispatchQueue.main.async {
+                        cell.updateAfterCalculation(title:result)
+                    }
+                }
+        case 4:
+                cell.updateBeforeCalculation()
+                DispatchQueue.global().async {
+                    let result = self.dictionaryButtonsData.measureExecutionTime {
+                        self.dictionaryButtonsData.searchNonExistingElementOfArray(array: self.arrayOfNames)
+                    }
+                    DispatchQueue.main.async {
+                        cell.updateAfterCalculation(title:result)
+                    }
+                }
+        case 5:
+                cell.updateBeforeCalculation()
+                DispatchQueue.global().async {
+                    let result = self.dictionaryButtonsData.measureExecutionTime {
+                        self.dictionaryButtonsData.searchNonExistingElementOfDictionary(dictionary: self.dictionaryOfNames)
+                    }
+                    DispatchQueue.main.async {
+                        cell.updateAfterCalculation(title:result)
+                    }
+                }
         default:
             cell.cellTappedAction = nil
         }

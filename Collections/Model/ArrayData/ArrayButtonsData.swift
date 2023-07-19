@@ -29,8 +29,6 @@ struct ArrayButtonsData: MeasureExecutionTime {
         for i in 0...999 {
             modifiedArray.insert(i, at: 0)
         }
-        
-        
     }
     
     func insertAtBeginningAtOnce(array: [Int]) {

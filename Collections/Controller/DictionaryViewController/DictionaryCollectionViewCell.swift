@@ -18,4 +18,14 @@ class DictionaryCollectionViewCell: UICollectionViewCell {
         super.awakeFromNib()
        
     }
+    
+    func updateBeforeCalculation() {
+        loadIndicator.startAnimating()
+        buttonName.text = ""
+    }
+    
+    func updateAfterCalculation(title:String) {
+        buttonName.text = title
+        loadIndicator.stopAnimating()
+    }
 }
