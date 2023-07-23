@@ -1,4 +1,8 @@
 # Collections
+
+![Collections](https://github.com/ShabliiPavlo/Collections/assets/123066255/6dbc81d5-0987-4113-8c91-16209ef808fa)
+
+
 Application for different operations with collections. 
 
 It also shows the importance of multithreading for creating user-friendly applications that run smoothly.
